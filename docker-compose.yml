@@ -1,0 +1,20 @@
+version: "3.0"
+
+services:
+  mongo:
+    image: mongo
+    container_name: entrega15
+    ports:
+      - 27017:27017
+    volumes:
+      - entrega15:/data/configdb
+      - entrega15:/data/db
+    #restart: always
+
+networks:
+  nodejs-network:
+    name: nodejs-network
+    driver: bridge
+
+volumes:
+  entrega15: {}
